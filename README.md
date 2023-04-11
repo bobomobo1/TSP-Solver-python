@@ -31,7 +31,12 @@ Key characteristics of swarm intelligence:
 * Individuals interact with each other and the environment
 * Those interactions are what creates a self-organizing system which forms the results
 
-Unique possibilities arise due to the techniques property of forming organized results, while not having a controller. It is a group of simple individuals, that become intelligent as a group. Also, even if a subgroup of individuals fail, the likelyhood of still getting results are still high. 
+Unique possibilities arise due to the techniques property of forming organized results, while not having a controller. It is a group of simple individuals, that become intelligent as a group. Also, even if a subgroup of individuals fail, the likelyhood of still getting results are still high(robust). 
+
+Disadvantages:
+* Sensitive - minor rule change can change alter the entire group
+* Hard to predict group results from the individual level
+* Difficult to implement and understand
 
 Swarm intelligence has some notable algorithms:
 * Ant colony optimization - find best path when moving through routes, record strong positions to simulate pheromones that other ants will migrate to
