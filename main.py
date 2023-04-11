@@ -14,8 +14,8 @@ cities = [(62, 80), (30, 9), (47, 91), (95, 35), (82, 57), (10, 48), (5, 72), (5
 
 print(cities)
 
-pcount = 5  # Particle count
-iterations = 50
+pcount = 75  # Particle count
+iterations = 100
 
 # Learning factors, usually equal to 2
 c1 = 2
@@ -72,7 +72,7 @@ def simulate_PSO(cities, iter, pcount, c1, c2):
     # Initialize each particle
     particles = []
     gbest = None  # Global best
-    pbest = 1000000  # Init Fitness value to really high number so
+    pbest = 1000000  # Init Fitness value to really high number so first pass will always go through
     for i in range(pcount):
         particles.append(Particle(cities))
     # For each particle: calc fitness value
@@ -168,8 +168,8 @@ def animate2(t):
     plt.title(s)
 
 
-anim2 = matplotlib.animation.FuncAnimation(fig, animate, frames=50, init_func=lambda: None, interval=600)
-anim = matplotlib.animation.FuncAnimation(fig, animate2, frames=50, init_func=lambda: None, interval=600)
+anim2 = matplotlib.animation.FuncAnimation(fig, animate, frames=10*pcount, init_func=lambda: None, interval=600)
+anim = matplotlib.animation.FuncAnimation(fig, animate2, frames=10*pcount, init_func=lambda: None, interval=600)
 anim.save('CurrentBest.gif', writer='pillow')
 anim2.save('Iterations.gif', writer='pillow')
 plt.show()

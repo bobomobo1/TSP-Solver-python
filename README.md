@@ -52,7 +52,7 @@ The applications of swarm intelligence include:
 The future of self-driving will use swarm intelligence. Imagine the cars as the individuals. Seeing traffic and interacting with the environment. This can be shared to other cars creating one big group of traffic data that can be utilized to improve every ones driving. 
 
 ## My Implementation of PSO
-Following the guide from http://www.swarmintelligence.org/tutorials.php I was able to implement a PSO, that can find the best route from a list of randomly generated points. I breifly talked about the idea of implementing a PSO, but I will go into more detail here.
+Following the guide from http://www.swarmintelligence.org/tutorials.php. I was able to implement a PSO, that can find the best route from a list of randomly generated points. I breifly talked about the idea of implementing a PSO, but I will go into more detail here.
 
 Idea:
 * Particle keeps track of current location (coordinates)
@@ -61,10 +61,14 @@ Idea:
 * Every iteration, particles will change their velocity towards their personalbest location
 * The speed at which this happens is determined by random numbers
 
-#### Example Code
-Here is the main algorithm that I used:
+#### Examples from Implementation
 
-Boiler-plate code to implement a Particle object
+Say we have the following coords as cities:
+```python
+cities = [(62, 80), (30, 9), (47, 91), (95, 35), (82, 57), (10, 48), (5, 72), (55, 15), (70, 52), (47, 3)]
+```
+
+Boiler-plate code to implement a Particle object:
 ```python
 # Holds the definition of a particle
 class Particle:
@@ -80,7 +84,40 @@ class Particle:
     def distance(self, city1, city2):
         return math.sqrt((city2[0] - city1[0]) ** 2 + (city2[1] - city1[1]) ** 2)
 ```
+The algorithm calls for the initialization of random particles. Notice that position is initialized to have a random order of the cities. Distance is a function that uses the distance formula to return the distance of points on an x-y plane
 
+The main loop of the PSO is in the following code. For each iteration, look at all the particles, do a fitness test, if that value is less than the current personal best (pbest), then set that value to the pbest, gbest is then the list of the current particles position list. The get_position() function is called which will update velocity and get the new positions.
+```python
+ # For each particle: calc fitness value
+    # If fitness value is better than the best fitness value  set current value to new best
+    for i in range(iter):
+        for count, p in enumerate(particles):  # Loop through each particle
+            if (p.fitness < pbest):
+                pbest = p.fitness
+                gbest = p.best.copy()
+                # gbest.append(p.position[0])  # Add the starting city to the end
+            #global_positions[count] = p.best.copy()  # Get all the best routes
+            #global_fitness[count] = p.fitness
+            p.get_position(gbest, c1, c2)
+```
+
+Velocity equation used from the website. Add velocity to x-y coord to set the new position.
+
+```python
+def get_position(self, gbest, c1, c2):
+        r1 = random.random()
+        r2 = random.random()
+        for i in range(len(self.position)):
+            self.velocity[i] = self.velocity[i] + c1 * r1 * (self.best[i][0] - self.position[i][0]) + c2 * r2 * (
+                    gbest[i][0] - self.position[i][0])
+            x = self.position[i][0] + self.velocity[i]  # Add velocity to x coord
+            y = self.position[i][1] + self.velocity[i]  # Add velocity to y coord
+            x = self.limit_check(x)
+            y = self.limit_check(y)
+            self.position[i] = (x, y)
+```
+
+This just loops until all the iterations are complete, leaving us with a final result for best path, and the total distance of that path.
 
 #### Work Cited
 
