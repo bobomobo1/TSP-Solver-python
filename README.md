@@ -51,6 +51,35 @@ The applications of swarm intelligence include:
 
 The future of self-driving will use swarm intelligence. Imagine the cars as the individuals. Seeing traffic and interacting with the environment. This can be shared to other cars creating one big group of traffic data that can be utilized to improve every ones driving. 
 
+## My Implementation of PSO
+Following the guide from http://www.swarmintelligence.org/tutorials.php I was able to implement a PSO, that can find the best route from a list of randomly generated points. I breifly talked about the idea of implementing a PSO, but I will go into more detail here.
+
+Idea:
+* Particle keeps track of current location (coordinates)
+* Tracks its current best 'fit' of the solution (personalbest)
+* The best 'fit' of all the particles is tracked too (globalbest)
+* Every iteration, particles will change their velocity towards their personalbest location
+* The speed at which this happens is determined by random numbers
+
+#### Example Code
+Here is the main algorithm that I used:
+
+Boiler-plate code to implement a Particle object
+```python
+# Holds the definition of a particle
+class Particle:
+
+    def __init__(self, cities):
+        self.cities = cities
+        self.position = random.sample(cities, len(cities))  # Generate random list
+        self.best = self.position.copy()  # Best position is initialized to starting list
+        self.fitness = self.fitness()
+        self.velocity = [0] * len(self.position)  # Init wilt 0s
+
+    # Formula for distance between 2 points
+    def distance(self, city1, city2):
+        return math.sqrt((city2[0] - city1[0]) ** 2 + (city2[1] - city1[1]) ** 2)
+```
 
 
 #### Work Cited
