@@ -83,9 +83,9 @@ def simulate_PSO(cities, iter, pcount, c1, c2):
                 pbest = p.fitness
                 gbest = p.best.copy()
                 # gbest.append(p.position[0])  # Add the starting city to the end
-            p.get_position(gbest, c1, c2)
             global_positions[count] = p.best.copy()  # Get all the best routes
             global_fitness[count] = p.fitness
+            p.get_position(gbest, c1, c2)
     # global_positions.append(gbest)
     return gbest, pbest
 
