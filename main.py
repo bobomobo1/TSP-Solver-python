@@ -14,7 +14,7 @@ cities = [(62, 80), (30, 9), (47, 91), (95, 35), (82, 57), (10, 48), (5, 72), (5
 
 print(cities)
 
-pcount = 10  # Particle count
+pcount = 5  # Particle count
 iterations = 20
 
 # Learning factors, usually equal to 2
