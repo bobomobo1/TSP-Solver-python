@@ -164,12 +164,12 @@ def animate2(t):
         label = f"({a},{b})"
         plt.annotate(label, (a, b))
     plt.xlim(0, 110)
-    s = 'Current particle with best path: ' + str(math.floor(t / len(cities)))
+    s = 'Current particle with best path: ' + str(int(current_fitness_index)) + ' with total distance of ' + str(global_fitness[int(current_fitness_index)])
     plt.title(s)
 
 
-anim = matplotlib.animation.FuncAnimation(fig, animate2, frames=50, init_func=lambda: None, interval=600)
 anim2 = matplotlib.animation.FuncAnimation(fig, animate, frames=50, init_func=lambda: None, interval=600)
+anim = matplotlib.animation.FuncAnimation(fig, animate2, frames=50, init_func=lambda: None, interval=600)
 anim.save('CurrentBest.gif', writer='pillow')
 anim2.save('Iterations.gif', writer='pillow')
 plt.show()
