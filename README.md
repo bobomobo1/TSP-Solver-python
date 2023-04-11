@@ -17,7 +17,7 @@ An implementation of Particle Swarm Optimization on the Traveling Salesman Probl
 
  ### Coordinates of Best Route Example
 <p align="center">
- <img src="Results.png" alt="Bst route" title="Best Route">
+ <img src="Results1.png" alt="Bst route" title="Best Route">
  </p>
 
 ## Swarm Intelligence
