@@ -32,3 +32,21 @@ Key characteristics of swarm intelligence:
 * Those interactions are what creates a self-organizing system which forms the results
 
 Unique possibilities arise due to the techniques property of forming organized results, while not having a controller. It is a group of simple individuals, that become intelligent as a group. Also, even if a subgroup of individuals fail, the likelyhood of still getting results are still high. 
+
+Swarm intelligence has some notable algorithms:
+* Ant colony optimization - find best path when moving through routes, record strong positions to simulate pheromones that other ants will migrate to
+* Particle swarm optimization - particles move through space, keeping track of its location, the particles best value is stored (fitness value), the best amongst the particles is also stored. Particles change velocity each iteration to head to the best fitness locations.
+
+### Applications
+The applications of swarm intelligence include:
+* Cargo routing
+* Production scheduling 
+* Crowd simulation
+* Clustering
+
+The future of self-driving will use swarm intelligence. Imagine the cars as the individuals. Seeing traffic and interacting with the environment. This can be shared to other cars creating one big group of traffic data that can be utilized to improve every ones driving. 
+
+
+
+
+
