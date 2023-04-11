@@ -53,5 +53,15 @@ The future of self-driving will use swarm intelligence. Imagine the cars as the 
 
 
 
+#### Work Cited
+
+Brezočnik, Lucija, et al. “Swarm Intelligence Algorithms for Feature Selection: A Review.” MDPI, Multidisciplinary Digital Publishing Institute, 1 Sept. 2018, https://www.mdpi.com/2076-3417/8/9/1521. 
+
+Dorigo, Marco, and Mauro Birattari. “Swarm Intelligence.” Scholarpedia, http://www.scholarpedia.org/article/Swarm_intelligence. 
+
+Hu, Xiaohui. “Pso Tutorial.” Particle Swarm Optimization: Tutorial, http://www.swarmintelligence.org/tutorials.php. 
+
+Swarm Intelligence, https://www.techferry.com/articles/swarm-intelligence.html#overview. 
+
 
 
