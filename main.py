@@ -14,7 +14,7 @@ cities = [(62, 80), (30, 9), (47, 91), (95, 35), (82, 57), (10, 48), (5, 72), (5
 
 print(cities)
 
-pcount = 75  # Particle count
+pcount = 100  # Particle count
 iterations = 100
 
 # Learning factors, usually equal to 2
@@ -83,9 +83,9 @@ def simulate_PSO(cities, iter, pcount, c1, c2):
                 pbest = p.fitness
                 gbest = p.best.copy()
                 # gbest.append(p.position[0])  # Add the starting city to the end
+            p.get_position(gbest, c1, c2)
             global_positions[count] = p.best.copy()  # Get all the best routes
             global_fitness[count] = p.fitness
-            p.get_position(gbest, c1, c2)
     # global_positions.append(gbest)
     return gbest, pbest
 
